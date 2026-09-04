@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { NavbarSidebar } from "./navbar-sidebar";
 import React from "react";
 import {useState} from "react";
+import { MenuIcon } from "lucide-react";
 
 
 const poppins = Poppins({
@@ -90,7 +91,20 @@ export const Navbar = () => {
             //variant="secondary"
             className="border-l border-t-0 border-b-0 border-r-0 px-12 h-full rounded-none bg-black text-white hover:bg-pink-400 hover:text-black transition-colors text-lg"
             >
-                <Link href="/sign-up">Start Selling</Link></Button>
+                <Link href="/sign-up">
+                Start Selling</Link>
+                </Button>
+
+            </div>
+
+            <div className="flex lg:hidden items-center justify-center">
+                <Button
+                variant="ghost"
+                className="size-12 border-transparent bg-white"
+                onClick={() => setIsSidebarOpen(true)}
+                >
+                <MenuIcon/>
+                </Button>
 
             </div>
         </nav>
