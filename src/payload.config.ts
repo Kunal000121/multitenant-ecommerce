@@ -7,12 +7,15 @@ import sharp from "sharp";
 
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
+import  dns  from "dns";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 console.log("DATABASE_URL:", process.env.DATABASE_URL);//example
 export default buildConfig({
+  
   admin: {
     user: Users.slug,
     importMap: {
